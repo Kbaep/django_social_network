@@ -24,7 +24,7 @@ urlpatterns = [
     path('api/v1/postlist/', PostAPIListView.as_view()),
     path('api/v1/post/<int:pk>/', PostAPIUpdate.as_view()),
     path('api/v1/postdelete/<int:pk>/', PostAPIDestroy.as_view()),
-    path('api/v1/postrating/<int:pk>/<str:method>', snippet_list),
+    path('api/v1/postrating/<int:pk>/<str:method>', postrating),
     path('api/v1/auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')),
     path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
