@@ -1,12 +1,13 @@
-
+import os
 from datetime import timedelta
 from pathlib import Path
 
+import dotenv
 
+dotenv.load_dotenv('.env')
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-SECRET_KEY = 'django-insecure-dvnijpf$q%zhh^2ap019!8s2v7*j5f4-#2b8f0sbl&4po$m^qy'
+secret_ket = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = secret_ket
 
 DEBUG = True
 
@@ -68,7 +69,6 @@ DATABASES = {
     }
 }
 
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -91,7 +91,6 @@ TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 
 USE_TZ = True
-
 
 STATIC_URL = 'static/'
 
